@@ -1,0 +1,4 @@
+Pillow==9.5.0
+requests==2.31.0
+matplotlib==3.7.1
+rich==13.3.5
