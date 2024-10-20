@@ -19,15 +19,19 @@ class ImageFlipper:
             flipped_im.save(os.path.join(self.directory, f"flipped_{filename}"))
             print(f"图片已成功翻转并保存为: flipped_{filename}")
             
-            # 显示原图和翻转后的图片
+            # 实时显示原图和翻转后的图片
             fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
             ax1.imshow(im)
-            ax1.set_title("原图")
+            ax1.set_title("原图", fontproperties='SimHei')
             ax1.axis('off')
             ax2.imshow(flipped_im)
-            ax2.set_title("翻转后的图片")
+            ax2.set_title("翻转后的图片", fontproperties='SimHei')
             ax2.axis('off')
+            plt.ion()  # 打开交互模式
             plt.show()
+            plt.pause(0.001)  # 暂停一小段时间以确保图像显示
+            input("按回车键关闭图像...")  # 等待用户输入以关闭图像
+            plt.close(fig)
             
         except requests.RequestException as e:
             print(f"下载图片时出错: {e}")
@@ -36,5 +40,6 @@ class ImageFlipper:
 
 if __name__ == "__main__":
     directory = "images/"
+    image_url = "https://i-blog.csdnimg.cn/direct/7556650d2e4c4c4d96b259c2abd77f48.jpeg"
     flipper = ImageFlipper(directory)
     flipper.flip_image(image_url)
