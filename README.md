@@ -34,12 +34,19 @@
 
 ## 项目部署方法
 
-1. 克隆项目到本地
-2. 安装依赖库：
+1. **克隆项目到本地**
+   ```
+   git clone https://github.com/tkzzzzzz6/BDAS-First_Evaluation_Round_Of_2024.git
+   ```
+   **或者**:
+   ```
+   git clone https://gitcode.com/tkzzzzzz6/test_1.git
+   ```
+2. **安装依赖库**：
    ```
    pip install -r requirements.txt
    ```
-3. 运行 `image_rotator.py` 文件：
+3. **运行 `image_rotator.py` 文件**：
    ```
    python image_rotator.py
    ```
